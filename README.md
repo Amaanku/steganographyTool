@@ -19,11 +19,15 @@ StegoVault is a simple and efficient web-based tool that allows users to hide se
 5. **Decode the Message**: Upload an encoded image to reveal the hidden message.
 
 ### Python Version
-1. Run the Python script:
+1. Install the required dependencies:
+   ```bash
+   pip install cv2
+   ```
+2. Run the Python script:
    ```bash
    python stegovault.py
    ```
-2. Follow the on-screen instructions to encode or decode messages in images.
+3. Follow the on-screen instructions to encode or decode messages in images.
 
 ## Installation & Usage
 ### Online Usage
