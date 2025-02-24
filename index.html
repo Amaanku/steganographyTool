@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔺StegoVault</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h2>StegoVault🛡<br><span>Hide your secrets inside the image</span></h2>
+        <div class="mode-buttons">
+            <button id="encodeModeBtn" class="active-mode" onclick="switchMode('encode')">Encode Mode</button>
+            <button id="decodeModeBtn" onclick="switchMode('decode')">Decode Mode</button>
+        </div>
+
+        <div>
+            <h3>Image</h3>
+            <input type="file" id="imageInput" accept="image/*">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div id="encodeSection">
+            <h3>Encode Message</h3>
+            <textarea id="message" rows="4" cols="50" placeholder="Enter your secret message"></textarea>
+            <br>
+            <input type="password" id="encodePasscode" placeholder="Enter passcode">
+            <br>
+            <button onclick="hideMessage()">Encode Message</button>
+            <a id="downloadLink" style="display: none;">Download Modified Image</a>
+        </div>
+
+        <div id="decodeSection">
+            <h3>Decode Message</h3>
+            <input type="password" id="decodePasscode" placeholder="Enter passcode">
+            <br>
+            <button onclick="extractMessage()">Decode Message</button>
+            <p><strong>Extracted Message:</strong> <span id="extractedMessage"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+:root {
+    --bg-color: #f5f7fa;
+    --text-color: #333;
+    --container-bg: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --container-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    min-height: 70vh;
+}
+.container > h2 > span{
+    font-size: 1rem;
+    font-style: italic;
+    color: grey;
+}
+canvas {
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+canvas.visible {
+    max-width: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+
+canvas:not(.visible) {
+    display: none;
+}
+
+canvas:hover {
+    transform: scale(1.02);
+}
+
+textarea, input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    background: var(--container-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+    min-height: 40px;
+}
+
+@media (max-height: 600px) {
+    textarea {
+        min-height: 80px;
+    }
+    .container {
+        min-height: 90vh;
+        padding: 15px;
+    }
+}
+
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+button {
+    padding: 12px 24px;
+    margin: 5px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.active-mode {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    transform: scale(1.05);
+}
+
+#encodeSection, #decodeSection {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#downloadLink {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#downloadLink:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
