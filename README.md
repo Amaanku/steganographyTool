@@ -2,6 +2,10 @@
 
 StegoVault is a simple and efficient web-based tool that allows users to hide secret messages inside images using steganography. This project is built using HTML, CSS, and JavaScript, ensuring a lightweight and easy-to-use experience without the need for heavy frameworks. Additionally, a Python script is included for users who prefer to perform steganography in their personal IDE.
 
+## Website
+
+You can visit the website here: [StegoVault](https://amaanku.github.io/steganographyTool/)
+
 ## Features
 - **Encode Text in Images**: Hide your secret messages inside images securely.
 - **Decode Hidden Messages**: Extract hidden messages from encoded images.
